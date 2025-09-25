@@ -21,7 +21,7 @@ void BouncingSprite::_ready() {
     }
 }
 
-// Optional: method to increase velocity
+//  method to increase velocity I used this to test the speed increase but now it does not do anything here
 void BouncingSprite::increase_speed() {
     velocity *= 1;
 }
@@ -66,47 +66,11 @@ void BouncingSprite::_process(double delta) {
     }
 }
 
-/*
-void BouncingSprite::_process(double delta) {
-    // Move the sprite
-    set_position(get_position() + velocity * delta);
 
-    // Move parent Area2D so CollisionShape2D moves along
-    if (Node2D* parent = Object::cast_to<Node2D>(get_parent())) {
-        parent->set_position(get_position());
-    }
-
-    // Rotate the sprite
-    set_rotation_degrees(get_rotation_degrees() + rotation_speed * delta);
-
-    Vector2 pos = get_position();
-    bool hit = false;
-
-    if (pos.x < 0 || pos.x > screen_size.x) {
-        velocity.x = -velocity.x;
-        hit = true;
-    }
-
-    if (pos.y < 0 || pos.y > screen_size.y) {
-        velocity.y = -velocity.y;
-        hit = true;
-    }
-
-    if (hit) {
-        increase_speed();
-        emit_signal("hit_edge");
-    }
-}
-*/
 // Method to reset position to center of screen
 void BouncingSprite::reset_position() {
     set_position(0,0);
 
-    /*// Move parent Area2D too
-    if (Node2D* parent = Object::cast_to<Node2D>(get_parent())) {
-        parent->set_position(get_position());
-    }
-    */
 }
 
 
@@ -137,7 +101,7 @@ void BouncingSprite::_bind_methods() {
         "set_rotation_speed",                           // setter
         "get_rotation_speed"                            // getter
     );
-    // Bind increase_speed method (optional)
+    // Bind increase_speed method 
     ClassDB::bind_method(D_METHOD("increase_speed"), &BouncingSprite::increase_speed);
 
     // Signal
@@ -148,3 +112,4 @@ void BouncingSprite::_bind_methods() {
     // Other method
     ClassDB::bind_method(D_METHOD("reset_position"), &BouncingSprite::reset_position);
 }
+
