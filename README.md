@@ -1,4 +1,4 @@
-# IMG420 - Assignment 1 Invasion Defense  
+# IMG420 - Assignment 2 Invasion Defense  
 
 A fast-paced arcade-style space shooter built with **Godot**.  
 Your goal: survive as long as possible and rack up points while dodging and blasting enemies.  
@@ -9,7 +9,7 @@ Your goal: survive as long as possible and rack up points while dodging and blas
 - [x] **At least two new features that are developed by extending Sprite2D into a new Node:** Extended Sprite2d into BouncingSprite that travels the map bouncing off of the wall and rotating 
 - [x] **Each of these features should have at least 1 parameter that can be manipulated via the editor:** the traveling part has a velocity feature in the editor you can manipulate and the rotating has a rotating speed that you can change 
 - [x] **One signal that is emitted by this node that triggers a method in one of the existing nodes in your Scene:** The c++ emits a hit_edge signal and when _on_bouncing_sprite_hit_edge in a node it makes the velocity 1.1 times faster every bounce 
-- [x] **One method in this node that is triggered by emitting a signal in one of the existing nodes in your Scene:** There is an emit in the editor when the godot icon is hit that makes the meteor rotate faster by 15 in the c++ next time it appears it stacks and becomes very fast after five kills
+- [x] **One method in this node that is triggered by emitting a signal in one of the existing nodes in your Scene:** There is an emit in the editor when the godot icon is hit that makes the meteor rotate faster by 15 in the c++ next time it appears it stacks and becomes very fast after five kills also on kill the c++ function reset_position is called to move the sprite back to where the godot icon is 
 
 
 ## How to Play  
